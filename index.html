@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Suba 💜</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- AUDIO -->
+
+<audio id="happySong" loop>
+<source src="music/happybirthday.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="velichaPoove">
+<source src="music/velichapoove.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="omanaPenne">
+<source src="music/omanapenne.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aarariraro">
+<source src="music/aarariraro.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="ammaSong">
+<source src="music/amma.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aazhi">
+<source src="music/aazhi.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="thooriga">
+<source src="music/thooriga.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="adiye">
+<source src="music/adiye.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="munbevaa">
+<source src="music/munbevaa.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="kaathalae">
+<source src="music/kaathalae.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+
+<section id="dobPage" class="page active">
+
+<div class="glass">
+
+<h1>🎂 Welcome Birthday Girl 🎂</h1>
+
+<p>Enter Your Date Of Birth</p>
+
+<input type="number" id="day" placeholder="Day">
+
+<input type="text" id="month" placeholder="Month">
+
+<input type="number" id="year" placeholder="Year">
+
+<button onclick="checkDOB()">Enter ✨</button>
+
+<p id="dobError"></p>
+
+</div>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section id="welcomePage" class="page">
+
+<h1>Welcome Suba 💜</h1>
+
+<p>A Special Surprise Awaits You ✨</p>
+
+<button onclick="showNameQuestion()">
+Begin Journey
+</button>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section id="nameQuestion" class="page">
+
+<h2>
+A girl was born on 20 June 2006...
+Who is she?
+</h2>
+
+<input id="nameInput">
+
+<button onclick="checkName()">
+Unlock 👑
+</button>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section id="birthdayQueen" class="page">
+
+<h1>👑 Birthday Queen 👑</h1>
+
+<img src="images/suba1.jpg" class="photo">
+
+<img src="images/suba2.jpg" class="photo">
+
+<p>
+Happy Birthday Suba 💜
+</p>
+
+<button onclick="showDadQuestion()">
+Next ➜
+</button>
+
+</section>
+
+<!-- PAGE 5 -->
+
+<section id="dadQuestion" class="page">
+
+<h2>
+He may not wear a cape...
+But he is your first hero.
+Who is he?
+</h2>
+
+<input id="dadInput">
+
+<button onclick="checkDad()">
+Submit
+</button>
+
+</section>
+
+<!-- PAGE 6 -->
+
+<section id="dadPage" class="page">
+
+<h1>💙 My First Hero 💙</h1>
+
+<img src="images/dad.jpg" class="photo">
+
+<button onclick="showMomQuestion()">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 7 -->
+
+<section id="momQuestion" class="page">
+
+<h2>
+Before you learned to walk,
+she carried you.
+Who is she?
+</h2>
+
+<input id="momInput">
+
+<button onclick="checkMom()">
+Submit
+</button>
+
+</section>
+
+<!-- PAGE 8 -->
+
+<section id="momPage" class="page">
+
+<h1>💜 My First Home 💜</h1>
+
+<img src="images/mom.jpg" class="photo">
+
+<button onclick="showSisterQuestion()">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 9 -->
+
+<section id="sisterQuestion" class="page">
+
+<h2>
+Sometimes friend...
+Sometimes enemy...
+Always family...
+Who is she?
+</h2>
+
+<input id="sisterInput">
+
+<button onclick="checkSister()">
+Submit
+</button>
+
+</section>
+
+<!-- PAGE 10 -->
+
+<section id="sisterPage" class="page">
+
+<h1>👭 Lalluu 💗</h1>
+
+<img src="images/sister.jpg" class="photo">
+
+<button onclick="showBestieQuestion()">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 11 -->
+
+<section id="bestieQuestion" class="page">
+
+<h2>
+One person knows your secrets...
+Who is that lucky person?
+</h2>
+
+<input id="bestieInput">
+
+<button onclick="checkBestie()">
+Submit
+</button>
+
+</section>
+
+<!-- PAGE 12 -->
+
+<section id="bestiePage" class="page">
+
+<h1>
+💜 Ammu & Suba 💜
+</h1>
+
+<img src="images/bestie.jpg" class="photo">
+
+<button onclick="showFriendsPage()">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 13 -->
+
+<section id="friendsPage" class="page">
+
+<h1>
+🥳 Friends Who Became Family
+</h1>
+
+<img src="images/friends.jpg" class="photo">
+
+<button onclick="showTimeline()">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 14 -->
+
+<section id="timelinePage" class="page">
+
+<h1>
+📸 Memory Timeline
+</h1>
+
+<div class="gallery">
+
+<img src="images/suba1.jpg">
+
+<img src="images/suba2.jpg">
+
+<img src="images/dad.jpg">
+
+<img src="images/mom.jpg">
+
+<img src="images/sister.jpg">
+
+<img src="images/bestie.jpg">
+
+</div>
+
+<button onclick="showLetter()">
+Open Secret Letter 💌
+</button>
+
+</section>
+
+<!-- PAGE 15 -->
+
+<section id="letterPage" class="page">
+
+<h1>💌 Letter From Ammu</h1>
+
+<div class="letter">
+
+<p>
+Dear Suba 💜 ...
+(Full Hidden Message Here)
+</p>
+
+</div>
+
+<button onclick="showCountdown()">
+Continue
+</button>
+
+</section>
+
+<!-- PAGE 16 -->
+
+<section id="countdownPage" class="page">
+
+<h1 id="countNumber">
+5
+</h1>
+
+</section>
+
+<!-- PAGE 17 -->
+
+<section id="celebrationPage" class="page">
+
+<h1>
+🎂 HAPPY BIRTHDAY SUBA 🎂
+</h1>
+
+<div class="confetti"></div>
+
+<button onclick="showCake()">
+Continue
+</button>
+
+</section>
+
+<!-- PAGE 18 -->
+
+<section id="cakePage" class="page">
+
+<h1>
+🍰 Cut The Cake
+</h1>
+
+<img src="images/cake.png" id="cake">
+
+<button onclick="cutCake()">
+Cut Cake 🎂
+</button>
+
+</section>
+
+<!-- PAGE 19 -->
+
+<section id="ratingPage" class="page">
+
+<h1>
+Did Your Ammu Make You Smile Today? 💜
+</h1>
+
+<div class="stars">
+
+⭐ ⭐ ⭐ ⭐ ⭐
+
+</div>
+
+<button onclick="showFinalPage()">
+Finish
+</button>
+
+</section>
+
+<!-- PAGE 20 -->
+
+<section id="finalPage" class="page">
+
+<h1>
+💜 Happy Birthday Pappuuuu 💜
+</h1>
+
+<p>
+A Wonderful Daughter 👨‍👩‍👧
+<br>
+Amazing Sister 👭
+<br>
+Precious Friend 💜
+<br>
+Best Bestie ✨
+</p>
+
+<h2>
+With Love,
+Your Ammu 💜
+</h2>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
