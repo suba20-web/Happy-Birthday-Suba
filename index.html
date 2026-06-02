@@ -5,415 +5,197 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Suba 💜</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- AUDIO -->
-
-<audio id="happySong" loop>
-<source src="music/happybirthday.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop>
+  <source src="music/happy-birthday.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="velichaPoove">
-<source src="music/velichapoove.mp3" type="audio/mpeg">
-</audio>
+<div id="intro">
+    <h1>Happy Birthday Suba 💜</h1>
+    <p>A Special Journey Made With Love</p>
 
-<audio id="omanaPenne">
-<source src="music/omanapenne.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="aarariraro">
-<source src="music/aarariraro.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="ammaSong">
-<source src="music/amma.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="aazhi">
-<source src="music/aazhi.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="thooriga">
-<source src="music/thooriga.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="adiye">
-<source src="music/adiye.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="munbevaa">
-<source src="music/munbevaa.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="kaathalae">
-<source src="music/kaathalae.mp3" type="audio/mpeg">
-</audio>
-
-<!-- PAGE 1 -->
-
-<section id="dobPage" class="page active">
-
-<div class="glass">
-
-<h1>🎂 Welcome Birthday Girl 🎂</h1>
-
-<p>Enter Your Date Of Birth</p>
-
-<input type="number" id="day" placeholder="Day">
-
-<input type="text" id="month" placeholder="Month">
-
-<input type="number" id="year" placeholder="Year">
-
-<button onclick="checkDOB()">Enter ✨</button>
-
-<p id="dobError"></p>
-
+    <button id="startBtn">
+        Begin Journey ✨
+    </button>
 </div>
+
+<section class="page hidden" id="dobPage">
+
+<h2>Only The Birthday Queen Can Enter 👑</h2>
+
+<input type="date" id="dobInput">
+
+<button onclick="checkDOB()">
+Unlock
+</button>
 
 </section>
 
-<!-- PAGE 2 -->
+<section class="page hidden" id="welcomePage">
 
-<section id="welcomePage" class="page">
+<img src="images/suba1.jpg" class="heroImg">
 
 <h1>Welcome Suba 💜</h1>
 
-<p>A Special Surprise Awaits You ✨</p>
-
-<button onclick="showNameQuestion()">
-Begin Journey
-</button>
-
-</section>
-
-<!-- PAGE 3 -->
-
-<section id="nameQuestion" class="page">
-
-<h2>
-A girl was born on 20 June 2006...
-Who is she?
-</h2>
-
-<input id="nameInput">
-
-<button onclick="checkName()">
-Unlock 👑
-</button>
-
-</section>
-
-<!-- PAGE 4 -->
-
-<section id="birthdayQueen" class="page">
-
-<h1>👑 Birthday Queen 👑</h1>
-
-<img src="images/suba1.jpg" class="photo">
-
-<img src="images/suba2.jpg" class="photo">
-
 <p>
-Happy Birthday Suba 💜
+Today is all about you...
 </p>
 
-<button onclick="showDadQuestion()">
-Next ➜
+<button onclick="nextPage('queenPage')">
+Continue
 </button>
 
 </section>
 
-<!-- PAGE 5 -->
+<section class="page hidden" id="queenPage">
 
-<section id="dadQuestion" class="page">
+<img src="images/suba2.jpg" class="heroImg">
 
-<h2>
-He may not wear a cape...
-But he is your first hero.
-Who is he?
-</h2>
+<h1>The Birthday Queen 👑</h1>
 
-<input id="dadInput">
+<p>20 June 2006</p>
 
-<button onclick="checkDad()">
-Submit
-</button>
-
-</section>
-
-<!-- PAGE 6 -->
-
-<section id="dadPage" class="page">
-
-<h1>💙 My First Hero 💙</h1>
-
-<img src="images/dad.jpg" class="photo">
-
-<button onclick="showMomQuestion()">
+<button onclick="nextPage('dadPage')">
 Next
 </button>
 
 </section>
 
-<!-- PAGE 7 -->
+<section class="page hidden" id="dadPage">
 
-<section id="momQuestion" class="page">
+<img src="images/dad.jpg" class="heroImg">
 
-<h2>
-Before you learned to walk,
-she carried you.
-Who is she?
-</h2>
+<h1>First Hero ❤️</h1>
 
-<input id="momInput">
+<p>
+Every Queen Has A King Who Protects Her.
+</p>
 
-<button onclick="checkMom()">
-Submit
-</button>
-
-</section>
-
-<!-- PAGE 8 -->
-
-<section id="momPage" class="page">
-
-<h1>💜 My First Home 💜</h1>
-
-<img src="images/mom.jpg" class="photo">
-
-<button onclick="showSisterQuestion()">
+<button onclick="nextPage('momPage')">
 Next
 </button>
 
 </section>
 
-<!-- PAGE 9 -->
+<section class="page hidden" id="momPage">
 
-<section id="sisterQuestion" class="page">
+<img src="images/mom.jpg" class="heroImg">
 
-<h2>
-Sometimes friend...
-Sometimes enemy...
-Always family...
-Who is she?
-</h2>
+<h1>Amma 💜</h1>
 
-<input id="sisterInput">
+<p>
+Before The World Loved You,
+Someone Already Did.
+</p>
 
-<button onclick="checkSister()">
-Submit
-</button>
-
-</section>
-
-<!-- PAGE 10 -->
-
-<section id="sisterPage" class="page">
-
-<h1>👭 Lalluu 💗</h1>
-
-<img src="images/sister.jpg" class="photo">
-
-<button onclick="showBestieQuestion()">
+<button onclick="nextPage('sisterPage')">
 Next
 </button>
 
 </section>
 
-<!-- PAGE 11 -->
+<section class="page hidden" id="sisterPage">
 
-<section id="bestieQuestion" class="page">
+<img src="images/lalluu.jpg" class="heroImg">
 
-<h2>
-One person knows your secrets...
-Who is that lucky person?
-</h2>
+<h1>Lalluu 💕</h1>
 
-<input id="bestieInput">
-
-<button onclick="checkBestie()">
-Submit
-</button>
-
-</section>
-
-<!-- PAGE 12 -->
-
-<section id="bestiePage" class="page">
-
-<h1>
-💜 Ammu & Suba 💜
-</h1>
-
-<img src="images/bestie.jpg" class="photo">
-
-<button onclick="showFriendsPage()">
+<button onclick="nextPage('bestiePage')">
 Next
 </button>
 
 </section>
 
-<!-- PAGE 13 -->
+<section class="page hidden" id="bestiePage">
 
-<section id="friendsPage" class="page">
+<img src="images/bestie.jpg" class="heroImg">
 
-<h1>
-🥳 Friends Who Became Family
-</h1>
+<h1>Ammu ❤️ Suba</h1>
 
-<img src="images/friends.jpg" class="photo">
+<p>
+Not Sisters By Blood,
+Sisters By Choice.
+</p>
 
-<button onclick="showTimeline()">
+<button onclick="nextPage('friendsPage')">
 Next
 </button>
 
 </section>
 
-<!-- PAGE 14 -->
+<section class="page hidden" id="friendsPage">
 
-<section id="timelinePage" class="page">
+<img src="images/friends.jpg" class="heroImg">
 
-<h1>
-📸 Memory Timeline
-</h1>
+<h1>Friends Forever 💫</h1>
 
-<div class="gallery">
-
-<img src="images/suba1.jpg">
-
-<img src="images/suba2.jpg">
-
-<img src="images/dad.jpg">
-
-<img src="images/mom.jpg">
-
-<img src="images/sister.jpg">
-
-<img src="images/bestie.jpg">
-
-</div>
-
-<button onclick="showLetter()">
-Open Secret Letter 💌
+<button onclick="nextPage('letterPage')">
+Next
 </button>
 
 </section>
 
-<!-- PAGE 15 -->
+<section class="page hidden" id="letterPage">
 
-<section id="letterPage" class="page">
-
-<h1>💌 Letter From Ammu</h1>
+<h1>Hidden Letter 💌</h1>
 
 <div class="letter">
 
-<p>
-Dear Suba 💜 ...
-(Full Hidden Message Here)
-</p>
+Happy Birthday Pappuuuu 💜
+
+Nee enakku romba special.
+Un smile, un friendship,
+un support ellame en life la
+valuable memories.
+
+Indha birthday unakku
+niraya happiness,
+success,
+and unforgettable memories
+kondu varanum.
+
+Always stay happy Suba 💜
+
+- Ammu
 
 </div>
 
-<button onclick="showCountdown()">
+<button onclick="nextPage('countdownPage')">
 Continue
 </button>
 
 </section>
 
-<!-- PAGE 16 -->
+<section class="page hidden" id="countdownPage">
 
-<section id="countdownPage" class="page">
+<h1 id="countdown">5</h1>
 
-<h1 id="countNumber">
-5
-</h1>
-
-</section>
-
-<!-- PAGE 17 -->
-
-<section id="celebrationPage" class="page">
-
-<h1>
-🎂 HAPPY BIRTHDAY SUBA 🎂
-</h1>
-
-<div class="confetti"></div>
-
-<button onclick="showCake()">
-Continue
+<button onclick="startCountdown()">
+Start Countdown
 </button>
 
 </section>
 
-<!-- PAGE 18 -->
+<section class="page hidden" id="finalPage">
 
-<section id="cakePage" class="page">
+<h1>🎂 HAPPY BIRTHDAY PAPPUUUUU 💜</h1>
 
-<h1>
-🍰 Cut The Cake
-</h1>
-
-<img src="images/cake.png" id="cake">
-
-<button onclick="cutCake()">
-Cut Cake 🎂
-</button>
-
-</section>
-
-<!-- PAGE 19 -->
-
-<section id="ratingPage" class="page">
-
-<h1>
-Did Your Ammu Make You Smile Today? 💜
-</h1>
-
-<div class="stars">
-
-⭐ ⭐ ⭐ ⭐ ⭐
-
+<div class="cake">
+🎂
 </div>
 
-<button onclick="showFinalPage()">
-Finish
-</button>
-
-</section>
-
-<!-- PAGE 20 -->
-
-<section id="finalPage" class="page">
-
-<h1>
-💜 Happy Birthday Pappuuuu 💜
-</h1>
-
 <p>
-A Wonderful Daughter 👨‍👩‍👧
-<br>
-Amazing Sister 👭
-<br>
-Precious Friend 💜
-<br>
-Best Bestie ✨
+Made With Love By Ammu
 </p>
-
-<h2>
-With Love,
-Your Ammu 💜
-</h2>
 
 </section>
 
 <script src="script.js"></script>
 
 </body>
-  </html>
+</html>
